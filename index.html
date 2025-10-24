@@ -505,26 +505,47 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
         <div class="glass-container">
-            <div class="contact-content">
-                <form id="contact-form" action="https://formspree.io/f/xqayrkop" method="POST">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>ClarityBot: AI Mental Wellness Assistant
+                    </h3>
+                    <p>ClarityBot is an AI-powered mental wellness coach designed to provide immediate, empathetic support and guidance to users, particularly students and young adults facing stress and anxiety. It combines a conversational interface with a powerful large language model (LLM) to offer coping strategies and non-medical emotional support in a non-judgmental space. It was built to address the critical need for accessible, non-stigmated mental health guidance.</p>
+                    <p> • Technology Stack: Python, Streamlit (Frontend/UI), Google Gemini API (gemini-2.5-flash-preview-05-20 Model Engine), Requests (Robust API handling).<br>
+        • Secure Architecture: Implemented Streamlit Secrets for secure API key management, ensuring credentials are never exposed in the public GitHub repository.<br>
+        • Empathy Engineering: Utilizes a strict system prompt to define the model's persona, guaranteeing compassionate responses while avoiding medical advice or crisis intervention.<br>
+        • Scalable Deployment: Deployed on Streamlit Community Cloud for permanent, 24/7 global accessibility.
+    </p>
+                    <div class="project-links">
+                        <a href="https://claritybot-nithisha116.streamlit.app" class="project-link">Live Demo</a>
+                        <a href="https://github.com/Nithisha116/claritybot" class="project-link">GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+</section>
+
+    <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <div class="glass-container">
+        <div class="contact-content">
+            <form id="contact-form" action="https://formspree.io/f/xqayrkop" method="POST">
+                <!-- FIX APPLIED: Added name="name" -->
+                <input type="text" name="name" placeholder="Name" required>
+                <!-- FIX APPLIED: Added name="_replyto" (Formspree's standard for the sender's email) -->
+                <input type="email" name="_replyto" placeholder="Email" required> 
+                <!-- FIX APPLIED: Added name="message" -->
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
