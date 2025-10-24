@@ -525,16 +525,16 @@
         </div>
 </section>
 
-    <section id="contact" class="contact">
+    
+<section id="contact" class="contact">
     <h2>Contact Me</h2>
     <div class="glass-container">
         <div class="contact-content">
-            <form id="contact-form" action="https://formspree.io/f/xqayrkop" method="POST">
-                <!-- FIX APPLIED: Added name="name" -->
+            <!-- FIXED: Replaced Formspree URL with your new Getform URL -->
+            <form id="contact-form" action="https://getform.io/f/brogmepa" method="POST">
                 <input type="text" name="name" placeholder="Name" required>
-                <!-- FIX APPLIED: Added name="_replyto" (Formspree's standard for the sender's email) -->
-                <input type="email" name="_replyto" placeholder="Email" required> 
-                <!-- FIX APPLIED: Added name="message" -->
+                <!-- Ensuring the name attribute is simply 'email' for Getform compatibility -->
+                <input type="email" name="email" placeholder="Email" required> 
                 <textarea name="message" placeholder="Message" required></textarea>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
@@ -546,6 +546,7 @@
         </div>
     </div>
 </section>
+
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
