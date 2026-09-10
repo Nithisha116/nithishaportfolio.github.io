@@ -1,0 +1,9 @@
+{
+  "name": "nithisha-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site with a serverless function backing the contact form.",
+  "dependencies": {
+    "nodemailer": "^7.0.10"
+  }
+}
