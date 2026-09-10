@@ -116,22 +116,53 @@ if (navToggle && navLinks) {
     });
 }
 
-// Scroll reveal animation
-window.addEventListener('scroll', reveal);
+// Scroll-triggered reveal animations
+(function () {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        return;
+    }
 
-function reveal() {
-    const reveals = document.querySelectorAll('.glass-container');
-    
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
-        }
+    const slideTargets = document.querySelectorAll(
+        'section > h2, .about-text, .education-card, .skills-category, .experience-card, .cert-card, .project-grid, .contact-content'
+    );
+    const scaleTargets = document.querySelectorAll('.about-image');
+
+    slideTargets.forEach(el => el.classList.add('reveal'));
+    scaleTargets.forEach(el => el.classList.add('reveal-scale'));
+
+    const allTargets = [...slideTargets, ...scaleTargets];
+
+    // Small stagger for elements grouped under the same parent
+    const groups = new Map();
+    allTargets.forEach(el => {
+        const parent = el.parentElement;
+        if (!groups.has(parent)) groups.set(parent, []);
+        groups.get(parent).push(el);
     });
-}
+    groups.forEach(siblings => {
+        siblings.forEach((el, i) => {
+            el.style.transitionDelay = `${Math.min(i, 5) * 90}ms`;
+        });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const el = entry.target;
+            // Only pay the GPU layer cost while the element is actually transitioning
+            el.style.willChange = 'opacity, transform';
+            el.classList.toggle('reveal-visible', entry.isIntersecting);
+            el.addEventListener('transitionend', () => {
+                el.style.willChange = 'auto';
+            }, { once: true });
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -8% 0px'
+    });
+
+    allTargets.forEach(el => revealObserver.observe(el));
+})();
 // Get the elements
 const carousel = document.querySelector('.cert-carousel');
 const nextBtn = document.querySelector('.next-btn');
