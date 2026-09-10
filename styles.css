@@ -556,6 +556,43 @@ h2{
     color:var(--primary-pink);
 }
 
+/* Credentials Highlight */
+.credentials-highlight{
+    max-width:900px;
+    margin:0 auto 2.5rem;
+    text-align:center;
+}
+.credentials-heading{
+    font-size:0.85rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.6);
+    margin-bottom:1rem;
+}
+.org-badges{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:0.7rem;
+}
+.org-badge{
+    padding:0.5rem 1.1rem;
+    font-size:0.85rem;
+    font-weight:600;
+    color:#e6e6e6;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,105,180,0.25);
+    border-radius:20px;
+    backdrop-filter:blur(6px);
+    transition:border-color 0.3s ease,box-shadow 0.3s ease,transform 0.3s ease,background 0.3s ease;
+}
+.org-badge:hover{
+    border-color:var(--primary-pink);
+    box-shadow:0 0 15px rgba(255,105,180,0.25);
+    background:rgba(255,105,180,0.08);
+    transform:translateY(-2px);
+}
+
 /* Certifications Section */
 .carousel-wrapper{
     position:relative;

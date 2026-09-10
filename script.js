@@ -124,7 +124,7 @@ if (navToggle && navLinks) {
     }
 
     const slideTargets = document.querySelectorAll(
-        'section > h2, .about-text, .education-card, .skills-category, .experience-card, .cert-card, .project-grid, .contact-content'
+        'section > h2, .about-text, .education-card, .skills-category, .experience-card, .cert-card, .project-grid, .contact-content, .credentials-highlight'
     );
     const scaleTargets = document.querySelectorAll('.about-image');
 
