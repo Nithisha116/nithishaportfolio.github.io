@@ -96,6 +96,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile hamburger menu toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+    const toggleIcon = navToggle.querySelector('i');
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const isActive = navLinks.classList.contains('active');
+        toggleIcon.classList.toggle('fa-bars', !isActive);
+        toggleIcon.classList.toggle('fa-times', isActive);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            toggleIcon.classList.add('fa-bars');
+            toggleIcon.classList.remove('fa-times');
+        });
+    });
+}
+
 // Scroll reveal animation
 window.addEventListener('scroll', reveal);
 

@@ -88,6 +88,15 @@ nav{
 .nav-links a:hover{
     color:var(--primary-pink);
 }
+.nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--primary-pink);
+    font-size:1.6rem;
+    cursor:pointer;
+    padding:0.25rem;
+}
 
 /* Target the icon (i tag) inside the navigation link */
 .nav-links li a i{
@@ -564,8 +573,31 @@ h2{
 /* Responsive Design Overrides */
 @media (max-width:768px){
     /* Home/Nav Fixes */
+    .nav-toggle{
+        display:block;
+    }
     .nav-links{
         display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        flex-direction:column;
+        gap:0;
+        background:rgba(10,25,47,0.97);
+        backdrop-filter:blur(10px);
+        padding:0.5rem 0;
+        border-top:1px solid rgba(255,255,255,0.1);
+    }
+    .nav-links.active{
+        display:flex;
+    }
+    .nav-links li{
+        width:100%;
+    }
+    .nav-links li a{
+        display:block;
+        padding:0.9rem 1.5rem;
     }
     .home-content h1{
         font-size:2.5rem;
@@ -584,6 +616,19 @@ h2{
     .about-image{
         max-width:50%;
         margin-bottom:20px;
+    }
+    /* Certifications Section Fixes */
+    .carousel-wrapper{
+        padding:0 30px;
+    }
+    .cert-card{
+        width:80%;
+    }
+    .cert-image-wrapper{
+        height:160px;
+    }
+    .cert-name{
+        font-size:1em;
     }
 }
 @media (max-width:900px){
