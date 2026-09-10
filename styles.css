@@ -192,14 +192,27 @@ h2{
 }
 
 /* Skills Section */
+.skills-category{
+    margin-bottom:2.5rem;
+}
+.skills-category:last-child{
+    margin-bottom:0;
+}
+.skills-category-title{
+    color:white;
+    font-size:1.2rem;
+    margin-bottom:1.2rem;
+    padding-left:0.7rem;
+    border-left:4px solid var(--primary-pink);
+}
 .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:2rem;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:1.5rem;
 }
 .skill-card{
     text-align:center;
-    padding:2rem;
+    padding:1.5rem 1rem;
     background:rgba(255,255,255,0.05);
     border-radius:10px;
     transition:transform 0.3s;
@@ -208,11 +221,14 @@ h2{
     transform:translateY(-5px);
 }
 .skill-card i{
-    font-size:3rem;
-    margin-bottom:1rem;
+    font-size:2.3rem;
+    margin-bottom:0.8rem;
     background:linear-gradient(45deg,var(--primary-pink),#4a90e2);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+}
+.skill-card h3{
+    font-size:0.95rem;
 }
 
 /* Education Section */
@@ -309,20 +325,96 @@ h2{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:2rem;
+    align-items:stretch;
 }
 .project-card{
-    background:rgba(255,255,255,0.05);
-    border-radius:10px;
-    padding:1.5rem;
-    transition:transform 0.3s;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    background:linear-gradient(160deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:1.75rem;
+    transition:transform 0.35s ease,box-shadow 0.35s ease,border-color 0.35s ease;
+    box-shadow:0 0 0 rgba(255,105,180,0);
 }
 .project-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+    border-color:rgba(255,105,180,0.4);
+    box-shadow:0 12px 30px rgba(138,43,226,0.35),0 0 25px rgba(255,105,180,0.15);
+}
+.project-card-header{
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    margin-bottom:0.9rem;
+}
+.project-icon{
+    flex-shrink:0;
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:rgba(255,105,180,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.project-icon i{
+    font-size:1.25rem;
+    background:linear-gradient(45deg,var(--primary-pink),#4a90e2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.project-category{
+    display:inline-block;
+    font-size:0.7rem;
+    letter-spacing:1px;
+    font-weight:700;
+    text-transform:uppercase;
+    color:var(--primary-pink);
+    background:rgba(255,105,180,0.1);
+    border:1px solid rgba(255,105,180,0.3);
+    padding:0.3rem 0.7rem;
+    border-radius:20px;
+}
+.project-card h3{
+    margin:0 0 0.8rem;
+    font-size:1.2rem;
+    line-height:1.35;
+    color:white;
+}
+.project-description{
+    color:#ddd;
+    line-height:1.6;
+}
+.project-highlights{
+    color:#ccc;
+    line-height:1.7;
+}
+.tech-badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+    margin-top:1.2rem;
+}
+.tech-badge{
+    font-size:0.75rem;
+    padding:0.3rem 0.75rem;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:6px;
+    color:#e6e6e6;
+    transition:border-color 0.3s ease,background 0.3s ease;
+}
+.project-card:hover .tech-badge{
+    border-color:rgba(255,105,180,0.5);
+    background:rgba(255,105,180,0.08);
 }
 .project-links{
     display:flex;
     gap:1rem;
-    margin-top:1rem;
+    margin-top:auto;
+    padding-top:1.2rem;
 }
 .project-link{
     padding:0.5rem 1rem;
